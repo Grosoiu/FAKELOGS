@@ -3,16 +3,12 @@ import time
 import datetime
 import uuid
 
-def generate_timestamp():
-    # Returns a current timestamp in ISO 8601 format
-    return datetime.datetime.utcnow().isoformat() + "Z"
-
 def choose_app_name():
     # Choose an application name from a predefined list
     app_names = [
         "1C Connect for Windows",
         "AC Desktop",
-        "AcrobatReader"
+        "AcrobatReader",
         "Atom",
         "Audacity",
         "Bussiness Intelligence",
@@ -51,12 +47,11 @@ def choose_pid():
     return str(random.randint(1000, 9999))
 
 def choose_log_level():
-    # Weighted random distribution of log levels (if desired)
+    # Weighted random distribution of log levels
     levels = ["Informational", "Informational", "Informational", "Warn", "Warn", "Critical"]
     return random.choice(levels)
 
 def generate_log_message(level, app):
-    # Define separate message pools for each log level
     informational_messages = [
         "Module initialized successfully",
         "Cache refreshed without issues",
@@ -68,7 +63,7 @@ def generate_log_message(level, app):
         "Periodic cleanup task finished",
         "User preferences updated",
         "Processed request in {time_spent}ms",
-        # 10 additional informational messages:
+        # Additional informational messages:
         "Service uptime stable for {time_spent}ms",
         "Configuration parameter in {filename} validated",
         "Request {task_id} processed successfully",
@@ -130,7 +125,7 @@ def generate_log_message(level, app):
     else:
         msg = random.choice(critical_messages)
     
-    # Introduce variable placeholders into messages
+    # Replace placeholders
     msg = msg.replace("{time_spent}", str(random.randint(5, 3000)))
     msg = msg.replace("{metric}", random.choice(["CPU load", "memory usage", "latency"]))
     msg = msg.replace("{value}", str(round(random.uniform(40.0, 99.9), 2)))
@@ -150,32 +145,72 @@ def generate_log_message(level, app):
     
     return msg
 
-def generate_log_line():
-    timestamp = generate_timestamp()
-    app_name = choose_app_name()
-    pid = choose_pid()
-    level = choose_log_level()
-    message = generate_log_message(level, app_name)
+def generate_simple_timestamp():
+    # For the simple logs, we'll just return hh:mm:ss,xxx style from the current_time as well
+    # We'll still base this on a global current_time for consistency.
+    # We'll just format the current_time differently.
+    global current_time_simple
+    return current_time_simple.strftime("%H:%M:%S,%f")[:-3]  # %f is microseconds, so we slice to get milliseconds
+
+def generate_simple_log_line():
+    tasks = [
+        "scheduled task 002", "scheduled task 947", "background job xyz", "background job abc"
+    ]
+    pid = random.randint(10000, 99999)
+    task = random.choice(tasks)
+    status = random.choice(["started", "finished"])
+    duration = random.randint(1, 7000) if status == "finished" else None
+    timestamp = generate_simple_timestamp()
     
-    # Construct the log line
-    # Format example:
-    # 2024-12-19T12:34:56.789Z [AppName] [PID:1234] [Informational] Message text...
-    log_line = f"{timestamp} [{app_name}] [PID:{pid}] [{level}] {message}"
+    log_line = f"{timestamp}, {task} {status}, {pid}"
+    if status == "finished" and duration > 5000:
+        log_line += f" -- warning as over 5 seconds duration"
     return log_line
 
 def main():
     output_file = "fake_application.log"
     num_lines = 4000  # Number of log lines to generate
-    delay_between_lines = 0  # Seconds between lines, can be 0 for no delay
+    delay_between_lines = 0  # Seconds between lines, can be 0
+    
+    
+    # We define a starting time at the beginning of November 2024
+    # and we will increment it for each log line to ensure they are consecutive.
+    start_time = datetime.datetime(2024, 11, 1, 0, 0, 0)
+    end_time = datetime.datetime(2024, 11, 7, 23, 59, 59)
+    current_time = start_time
+    
+
+
     
     with open(output_file, "w", encoding="utf-8") as f:
         for _ in range(num_lines):
-            line = generate_log_line()
-            f.write(line + "\n")
-            # Optionally print to stdout
-            # print(line)
-            # Delay between lines to simulate real-time logging
+            # Increment current_time by a random number of seconds to ensure a random but increasing sequence
+            increment_seconds = random.randint(1, 120)  # random increment between lines
+            current_time += datetime.timedelta(seconds=increment_seconds)
+            # Ensure we don't pass the end_time, but if we do, just break
+            if current_time > end_time:
+                break
+            timestamp = current_time.isoformat() + "Z"
+            
+            app_name = choose_app_name()
+            pid = choose_pid()
+            level = choose_log_level()
+            message = generate_log_message(level, app_name)
+            
+            log_line = f"{timestamp} [{app_name}] [PID:{pid}] [{level}] {message}"
+            f.write(log_line + "\n")
             time.sleep(delay_between_lines)
+
+    # with open(simple_output_file, "w", encoding="utf-8") as f:
+    #     for _ in range(simple_lines):
+    #         # Increment for the simple logs as well
+    #         increment_seconds = random.randint(1, 60)  # smaller increments for simple logs
+    #         current_time_simple += datetime.timedelta(seconds=increment_seconds)
+    #         if current_time_simple > end_time:
+    #             break
+    #         line = generate_simple_log_line()
+    #         f.write(line + "\n")
+    #         time.sleep(delay_between_lines)
 
 if __name__ == "__main__":
     main()
