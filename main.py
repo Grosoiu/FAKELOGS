@@ -10,13 +10,39 @@ def generate_timestamp():
 def choose_app_name():
     # Choose an application name from a predefined list
     app_names = [
-        "InventoryService",
-        "UserAuthModule",
-        "PaymentProcessor",
-        "AnalyticsEngine",
-        "LogAggregator",
-        "MessagingQueue",
-        "WorkflowOrchestrator"
+        "1C Connect for Windows",
+        "AC Desktop",
+        "AcrobatReader"
+        "Atom",
+        "Audacity",
+        "Bussiness Intelligence",
+        "Cmake",
+        "ColdFusion",
+        "EdgeWebDriver",
+        "EPMMaestro",
+        "EuroClear",
+        "EverNote",
+        "Figma",
+        "Github Desktop",
+        "Gitlab Runners",
+        "Grafana",
+        "Prometheus",
+        "IAccessSolution",
+        "IntellijIdea",
+        "Java JDK 1.7",
+        "JavaProfiler",
+        "JSONViewer",
+        "Lazarus",
+        "LCORE",
+        "Grafana Enterprise",
+        "GSView",
+        "HPP Printer Driver",
+        "Insomnia Free",
+        "Insomnia Enterprise",
+        "iReport",
+        "Matlab",
+        "OpenStudio",
+        "OpenVPN"
     ]
     return random.choice(app_names)
 
@@ -26,44 +52,97 @@ def choose_pid():
 
 def choose_log_level():
     # Weighted random distribution of log levels (if desired)
-    # For example, more Informational than Warn and more Warn than Critical
     levels = ["Informational", "Informational", "Informational", "Warn", "Warn", "Critical"]
     return random.choice(levels)
 
 def generate_log_message(level, app):
-    # Generate a semi-random log message.
-    # Feel free to expand this with more complexity.
-    
-    # Some sample messages that could appear in logs:
-    base_messages = [
-        "Initialized module successfully",
-        "Connection to database established",
-        "User login attempt succeeded",
-        "Cache miss occurred",
+    # Define separate message pools for each log level
+    informational_messages = [
+        "Module initialized successfully",
+        "Cache refreshed without issues",
+        "User session established",
+        "Data synchronization completed",
+        "Heartbeat signal received",
+        "Metrics collected successfully",
+        "Configuration loaded",
+        "Periodic cleanup task finished",
+        "User preferences updated",
         "Processed request in {time_spent}ms",
-        "Configuration value not found, using defaults",
-        "File {filename} not found in directory",
-        "Performance threshold exceeded: {metric} at {value}",
-        "Background task {task_id} completed with warnings",
-        "Reconnected to service after {retries} retries",
-        "Unexpected input format encountered"
+        # 10 additional informational messages:
+        "Service uptime stable for {time_spent}ms",
+        "Configuration parameter in {filename} validated",
+        "Request {task_id} processed successfully",
+        "Scheduled maintenance task {task_id} executed without errors",
+        "Email notification dispatched (took {time_spent}ms)",
+        "New user registration completed",
+        "Connection pool resized: current {value} usage",
+        "Resource usage remains below {metric} thresholds",
+        "Report generation finished (File: {filename})",
+        "Application memory footprint stable"
     ]
     
-    msg = random.choice(base_messages)
+    warning_messages = [
+        "Cache miss occurred; fallback to default values",
+        "High memory usage detected: {value}% of {metric}",
+        "Slow response time: {time_spent}ms exceeds threshold",
+        "Possible inconsistent state detected in {filename}",
+        "User login attempt rate unusually high",
+        "Retrying connection to external service",
+        "Partial data received from upstream service",
+        "Background task {task_id} completed with non-fatal errors",
+        "Deprecated API used by client",
+        "Request queue length approaching limit",
+        "Configuration parameter is missing; using fallback",
+        "Network latency spike: {time_spent}ms observed",
+        "Resource utilization nearing saturation point",
+        "Unexpected null response encountered in function",
+        "Disk space running low: 512MB remaining"
+    ]
     
-    # Introduce some variable placeholders
+    critical_messages = [
+        "Database connection failed unexpectedly",
+        "Unrecoverable error in payment processing [Error Code: E{code}]",
+        "Fatal exception: stack trace generated",
+        "Application out of memory; shutting down",
+        "Security breach detected: unauthorized access attempt",
+        "Cluster node unreachable: potential network partition",
+        "Critical data corruption detected in storage layer",
+        "Severe latency spike observed: {time_spent}ms",
+        "Primary service endpoint returned HTTP 500 repeatedly",
+        "Data loss event: replication failed on multiple nodes",
+        "Memory corruption detected in critical heap segment",
+        "Irrecoverable disk I/O error on {filename}",
+        "Service dependency chain broken, forced failover initiated",
+        "Encryption key compromised, immediate rotation required",
+        "Network isolation detected on primary cluster node",
+        "Critical transaction rollback failed; data integrity at risk",
+        "Major security breach: multiple user accounts compromised",
+        "Zero-day exploit detected, emergency patch required",
+        "Inconsistent state transition in distributed state machine",
+        "Severe {metric} overload at {value}%, triggering emergency throttle"
+    ]
+    
+    # Choose a base message depending on the level
+    if level == "Informational":
+        msg = random.choice(informational_messages)
+    elif level == "Warn":
+        msg = random.choice(warning_messages)
+    else:
+        msg = random.choice(critical_messages)
+    
+    # Introduce variable placeholders into messages
     msg = msg.replace("{time_spent}", str(random.randint(5, 3000)))
     msg = msg.replace("{metric}", random.choice(["CPU load", "memory usage", "latency"]))
-    msg = msg.replace("{value}", str(random.uniform(0.1, 99.9)))
+    msg = msg.replace("{value}", str(round(random.uniform(40.0, 99.9), 2)))
     msg = msg.replace("{filename}", f"file_{random.randint(1,100)}.cfg")
     msg = msg.replace("{task_id}", str(uuid.uuid4()).split("-")[0])
-    msg = msg.replace("{retries}", str(random.randint(1,5)))
+    msg = msg.replace("{code}", str(random.randint(1000,9999)))
     
-    # Add extra detail depending on the log level
+    # Add additional detail for non-informational levels
     if level == "Warn":
-        msg += " [Warning Code: W" + str(random.randint(100,999)) + "]"
+        msg += f" [Warning Code: W{random.randint(100,999)}]"
     elif level == "Critical":
-        msg += " [Error Code: E" + str(random.randint(1000,9999)) + "]"
+        msg += f" [Critical Error Code: E{random.randint(1000,9999)}]"
         
     # Possibly add some user context
     if random.random() < 0.3:
@@ -80,22 +159,21 @@ def generate_log_line():
     
     # Construct the log line
     # Format example:
-    # 2024-12-19T12:34:56.789Z [AppName] [PID:1234] [Informational] Initialized module successfully
-    # You can also rearrange the order of fields if you prefer.
+    # 2024-12-19T12:34:56.789Z [AppName] [PID:1234] [Informational] Message text...
     log_line = f"{timestamp} [{app_name}] [PID:{pid}] [{level}] {message}"
     return log_line
 
 def main():
     output_file = "fake_application.log"
-    num_lines = 100  # Number of log lines to generate
-    delay_between_lines = 0.1  # Seconds between lines, can be 0 for no delay
+    num_lines = 4000  # Number of log lines to generate
+    delay_between_lines = 0  # Seconds between lines, can be 0 for no delay
     
     with open(output_file, "w", encoding="utf-8") as f:
         for _ in range(num_lines):
             line = generate_log_line()
             f.write(line + "\n")
             # Optionally print to stdout
-            print(line)
+            # print(line)
             # Delay between lines to simulate real-time logging
             time.sleep(delay_between_lines)
 
