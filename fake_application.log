@@ -1,0 +1,100 @@
+2024-12-19T10:03:47.866966Z [InventoryService] [PID:4449] [Informational] User login attempt succeeded
+2024-12-19T10:03:47.968152Z [PaymentProcessor] [PID:2097] [Warn] Reconnected to service after 4 retries [Warning Code: W949] [UserID: 35215]
+2024-12-19T10:03:48.068785Z [WorkflowOrchestrator] [PID:2619] [Critical] Background task 2cf37d93 completed with warnings [Error Code: E4005]
+2024-12-19T10:03:48.169082Z [PaymentProcessor] [PID:5416] [Warn] Processed request in 1205ms [Warning Code: W635]
+2024-12-19T10:03:48.269947Z [InventoryService] [PID:6112] [Informational] Performance threshold exceeded: latency at 50.53606926924398 [UserID: 28674]
+2024-12-19T10:03:48.370538Z [WorkflowOrchestrator] [PID:4210] [Warn] File file_61.cfg not found in directory [Warning Code: W738]
+2024-12-19T10:03:48.471320Z [MessagingQueue] [PID:5510] [Warn] Cache miss occurred [Warning Code: W658]
+2024-12-19T10:03:48.572311Z [InventoryService] [PID:1797] [Informational] User login attempt succeeded [UserID: 79557]
+2024-12-19T10:03:48.673087Z [MessagingQueue] [PID:5195] [Informational] File file_35.cfg not found in directory [UserID: 78996]
+2024-12-19T10:03:48.773950Z [InventoryService] [PID:6691] [Warn] Unexpected input format encountered [Warning Code: W677]
+2024-12-19T10:03:48.874774Z [InventoryService] [PID:4358] [Informational] Performance threshold exceeded: memory usage at 89.64505075967274 [UserID: 23644]
+2024-12-19T10:03:48.975534Z [MessagingQueue] [PID:9141] [Informational] User login attempt succeeded
+2024-12-19T10:03:49.076545Z [InventoryService] [PID:7485] [Informational] Initialized module successfully
+2024-12-19T10:03:49.177072Z [WorkflowOrchestrator] [PID:2758] [Warn] Processed request in 75ms [Warning Code: W387] [UserID: 53942]
+2024-12-19T10:03:49.277978Z [AnalyticsEngine] [PID:7103] [Warn] Performance threshold exceeded: CPU load at 90.40966974009902 [Warning Code: W268] [UserID: 13329]
+2024-12-19T10:03:49.379179Z [WorkflowOrchestrator] [PID:8026] [Critical] Connection to database established [Error Code: E8732]
+2024-12-19T10:03:49.480280Z [LogAggregator] [PID:5783] [Informational] Initialized module successfully [UserID: 32643]
+2024-12-19T10:03:49.581284Z [PaymentProcessor] [PID:6992] [Warn] Reconnected to service after 1 retries [Warning Code: W422]
+2024-12-19T10:03:49.682235Z [LogAggregator] [PID:1882] [Warn] Reconnected to service after 1 retries [Warning Code: W353] [UserID: 73778]
+2024-12-19T10:03:49.782992Z [WorkflowOrchestrator] [PID:3226] [Critical] Processed request in 747ms [Error Code: E3344]
+2024-12-19T10:03:49.883963Z [LogAggregator] [PID:3513] [Informational] User login attempt succeeded
+2024-12-19T10:03:49.984943Z [MessagingQueue] [PID:8552] [Critical] User login attempt succeeded [Error Code: E2463]
+2024-12-19T10:03:50.086246Z [MessagingQueue] [PID:3960] [Warn] File file_71.cfg not found in directory [Warning Code: W669]
+2024-12-19T10:03:50.186889Z [LogAggregator] [PID:5053] [Warn] Cache miss occurred [Warning Code: W805]
+2024-12-19T10:03:50.287687Z [LogAggregator] [PID:2738] [Informational] Processed request in 1506ms
+2024-12-19T10:03:50.388792Z [PaymentProcessor] [PID:9895] [Warn] Processed request in 2515ms [Warning Code: W364] [UserID: 29274]
+2024-12-19T10:03:50.489825Z [MessagingQueue] [PID:1251] [Warn] User login attempt succeeded [Warning Code: W226]
+2024-12-19T10:03:50.590738Z [WorkflowOrchestrator] [PID:3616] [Warn] File file_6.cfg not found in directory [Warning Code: W120] [UserID: 48979]
+2024-12-19T10:03:50.691566Z [InventoryService] [PID:7972] [Informational] Performance threshold exceeded: memory usage at 6.360760900573001
+2024-12-19T10:03:50.792480Z [MessagingQueue] [PID:5039] [Informational] Background task 683bedc4 completed with warnings
+2024-12-19T10:03:50.893220Z [InventoryService] [PID:2055] [Informational] File file_59.cfg not found in directory [UserID: 17905]
+2024-12-19T10:03:50.994020Z [UserAuthModule] [PID:5189] [Warn] Processed request in 1534ms [Warning Code: W492] [UserID: 53736]
+2024-12-19T10:03:51.095502Z [LogAggregator] [PID:8496] [Informational] File file_35.cfg not found in directory
+2024-12-19T10:03:51.196176Z [UserAuthModule] [PID:9903] [Critical] Background task b0430f38 completed with warnings [Error Code: E7426]
+2024-12-19T10:03:51.297234Z [PaymentProcessor] [PID:9658] [Informational] Cache miss occurred [UserID: 39276]
+2024-12-19T10:03:51.398975Z [UserAuthModule] [PID:7479] [Warn] Connection to database established [Warning Code: W610] [UserID: 57831]
+2024-12-19T10:03:51.500016Z [PaymentProcessor] [PID:6097] [Warn] Configuration value not found, using defaults [Warning Code: W870]
+2024-12-19T10:03:51.600965Z [PaymentProcessor] [PID:4865] [Critical] File file_23.cfg not found in directory [Error Code: E3246]
+2024-12-19T10:03:51.702063Z [AnalyticsEngine] [PID:7600] [Warn] Initialized module successfully [Warning Code: W990]
+2024-12-19T10:03:51.803249Z [UserAuthModule] [PID:1867] [Informational] File file_25.cfg not found in directory
+2024-12-19T10:03:51.904261Z [MessagingQueue] [PID:9640] [Informational] Reconnected to service after 5 retries
+2024-12-19T10:03:52.005272Z [MessagingQueue] [PID:5117] [Informational] Unexpected input format encountered [UserID: 29557]
+2024-12-19T10:03:52.106166Z [WorkflowOrchestrator] [PID:9058] [Warn] Background task ba73947d completed with warnings [Warning Code: W841] [UserID: 44572]
+2024-12-19T10:03:52.207243Z [AnalyticsEngine] [PID:9816] [Informational] File file_66.cfg not found in directory
+2024-12-19T10:03:52.308254Z [InventoryService] [PID:6311] [Critical] Configuration value not found, using defaults [Error Code: E3990]
+2024-12-19T10:03:52.409172Z [UserAuthModule] [PID:7914] [Informational] Reconnected to service after 5 retries [UserID: 49575]
+2024-12-19T10:03:52.510263Z [PaymentProcessor] [PID:9890] [Warn] User login attempt succeeded [Warning Code: W684]
+2024-12-19T10:03:52.611722Z [UserAuthModule] [PID:2613] [Informational] File file_58.cfg not found in directory
+2024-12-19T10:03:52.712971Z [AnalyticsEngine] [PID:1625] [Informational] Initialized module successfully
+2024-12-19T10:03:52.814518Z [WorkflowOrchestrator] [PID:4241] [Informational] Initialized module successfully
+2024-12-19T10:03:52.915215Z [UserAuthModule] [PID:7366] [Informational] Unexpected input format encountered [UserID: 70740]
+2024-12-19T10:03:53.016151Z [MessagingQueue] [PID:2615] [Informational] Initialized module successfully [UserID: 41157]
+2024-12-19T10:03:53.116856Z [UserAuthModule] [PID:7919] [Informational] Configuration value not found, using defaults
+2024-12-19T10:03:53.218082Z [PaymentProcessor] [PID:1234] [Informational] Unexpected input format encountered
+2024-12-19T10:03:53.318994Z [InventoryService] [PID:6541] [Warn] Connection to database established [Warning Code: W215]
+2024-12-19T10:03:53.419904Z [MessagingQueue] [PID:6342] [Informational] File file_60.cfg not found in directory
+2024-12-19T10:03:53.520506Z [MessagingQueue] [PID:9912] [Informational] User login attempt succeeded
+2024-12-19T10:03:53.621113Z [MessagingQueue] [PID:2461] [Informational] Connection to database established
+2024-12-19T10:03:53.721766Z [InventoryService] [PID:3090] [Warn] Unexpected input format encountered [Warning Code: W230]
+2024-12-19T10:03:53.822270Z [PaymentProcessor] [PID:7584] [Warn] Background task 89804a7d completed with warnings [Warning Code: W278]
+2024-12-19T10:03:53.923003Z [WorkflowOrchestrator] [PID:3224] [Critical] Performance threshold exceeded: memory usage at 13.731301455332549 [Error Code: E8094]
+2024-12-19T10:03:54.028998Z [AnalyticsEngine] [PID:4111] [Informational] Connection to database established [UserID: 12737]
+2024-12-19T10:03:54.132371Z [WorkflowOrchestrator] [PID:1662] [Informational] File file_80.cfg not found in directory [UserID: 86476]
+2024-12-19T10:03:54.233210Z [AnalyticsEngine] [PID:9710] [Critical] Unexpected input format encountered [Error Code: E1248]
+2024-12-19T10:03:54.334024Z [LogAggregator] [PID:9581] [Warn] Reconnected to service after 5 retries [Warning Code: W503]
+2024-12-19T10:03:54.435170Z [AnalyticsEngine] [PID:4663] [Warn] User login attempt succeeded [Warning Code: W361]
+2024-12-19T10:03:54.536380Z [WorkflowOrchestrator] [PID:5047] [Warn] Background task 0703de28 completed with warnings [Warning Code: W160] [UserID: 48539]
+2024-12-19T10:03:54.637247Z [AnalyticsEngine] [PID:4087] [Informational] Performance threshold exceeded: CPU load at 63.61497513198214
+2024-12-19T10:03:54.738173Z [LogAggregator] [PID:3807] [Informational] Configuration value not found, using defaults
+2024-12-19T10:03:54.839034Z [PaymentProcessor] [PID:2194] [Informational] Background task 69d5c083 completed with warnings
+2024-12-19T10:03:54.940105Z [WorkflowOrchestrator] [PID:6691] [Warn] User login attempt succeeded [Warning Code: W538]
+2024-12-19T10:03:55.041125Z [MessagingQueue] [PID:6058] [Informational] Unexpected input format encountered
+2024-12-19T10:03:55.142225Z [AnalyticsEngine] [PID:4145] [Informational] Cache miss occurred
+2024-12-19T10:03:55.243458Z [UserAuthModule] [PID:3189] [Informational] Performance threshold exceeded: latency at 16.802227298779556
+2024-12-19T10:03:55.344382Z [InventoryService] [PID:6076] [Informational] Performance threshold exceeded: memory usage at 15.869545862097342 [UserID: 64382]
+2024-12-19T10:03:55.445050Z [WorkflowOrchestrator] [PID:3099] [Informational] Configuration value not found, using defaults
+2024-12-19T10:03:55.546020Z [UserAuthModule] [PID:2763] [Critical] Processed request in 2265ms [Error Code: E5570]
+2024-12-19T10:03:55.646555Z [InventoryService] [PID:1115] [Informational] Performance threshold exceeded: latency at 1.386140321534998
+2024-12-19T10:03:55.747874Z [PaymentProcessor] [PID:3630] [Warn] Background task 8c883534 completed with warnings [Warning Code: W435]
+2024-12-19T10:03:55.848546Z [AnalyticsEngine] [PID:8275] [Warn] File file_58.cfg not found in directory [Warning Code: W418] [UserID: 34509]
+2024-12-19T10:03:55.949755Z [PaymentProcessor] [PID:4106] [Warn] Performance threshold exceeded: memory usage at 91.83315996073011 [Warning Code: W700]
+2024-12-19T10:03:56.050537Z [InventoryService] [PID:3300] [Warn] Configuration value not found, using defaults [Warning Code: W626] [UserID: 19186]
+2024-12-19T10:03:56.151274Z [InventoryService] [PID:9145] [Informational] Configuration value not found, using defaults
+2024-12-19T10:03:56.252090Z [MessagingQueue] [PID:6347] [Warn] Unexpected input format encountered [Warning Code: W178] [UserID: 60458]
+2024-12-19T10:03:56.352884Z [InventoryService] [PID:8342] [Warn] Configuration value not found, using defaults [Warning Code: W863]
+2024-12-19T10:03:56.454894Z [MessagingQueue] [PID:3818] [Informational] User login attempt succeeded
+2024-12-19T10:03:56.555323Z [PaymentProcessor] [PID:5993] [Critical] Reconnected to service after 4 retries [Error Code: E1835] [UserID: 63655]
+2024-12-19T10:03:56.656258Z [AnalyticsEngine] [PID:2492] [Critical] Cache miss occurred [Error Code: E4150] [UserID: 94786]
+2024-12-19T10:03:56.757155Z [MessagingQueue] [PID:6514] [Informational] Cache miss occurred
+2024-12-19T10:03:56.858080Z [LogAggregator] [PID:3553] [Warn] Connection to database established [Warning Code: W909]
+2024-12-19T10:03:56.958713Z [MessagingQueue] [PID:5065] [Warn] User login attempt succeeded [Warning Code: W736] [UserID: 52145]
+2024-12-19T10:03:57.059490Z [InventoryService] [PID:9816] [Warn] Unexpected input format encountered [Warning Code: W848]
+2024-12-19T10:03:57.160098Z [InventoryService] [PID:2429] [Critical] File file_83.cfg not found in directory [Error Code: E5295]
+2024-12-19T10:03:57.260918Z [AnalyticsEngine] [PID:2717] [Informational] Cache miss occurred
+2024-12-19T10:03:57.361421Z [MessagingQueue] [PID:8073] [Informational] Cache miss occurred [UserID: 33979]
+2024-12-19T10:03:57.462094Z [WorkflowOrchestrator] [PID:3975] [Warn] Background task 3964f0c5 completed with warnings [Warning Code: W249] [UserID: 18732]
+2024-12-19T10:03:57.562860Z [MessagingQueue] [PID:1281] [Informational] Connection to database established
+2024-12-19T10:03:57.664166Z [LogAggregator] [PID:1338] [Critical] Configuration value not found, using defaults [Error Code: E1057]
+2024-12-19T10:03:57.765158Z [LogAggregator] [PID:2787] [Informational] Processed request in 372ms [UserID: 73171]
+2024-12-19T10:03:57.866237Z [WorkflowOrchestrator] [PID:3541] [Warn] Reconnected to service after 1 retries [Warning Code: W128]
