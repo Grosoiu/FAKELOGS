@@ -17,8 +17,8 @@ def generate_timestamp(base_hour=11, base_minute=35, base_second=0, base_millise
     return hours, minutes, seconds, milliseconds
 
 def format_timestamp(hours, minutes, seconds, milliseconds):
-    # Format as HH:MM:SSS (with leading zeros and 3-digit milliseconds)
-    return f"{hours:02d}:{minutes:02d}:{seconds:03d}"
+    # Format as HH:MM:SS (with leading zeros)
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
 
 def generate_scheduled_task_id():
     # 3-digit numeric ID
@@ -59,9 +59,9 @@ def main():
             task_type, task_id, pid = random.choice(active_tasks)
             active_tasks.remove((task_type, task_id, pid))
             if task_type == "scheduled":
-                line = f"{timestamp_str},scheduled task {task_id}, finished,{pid}"
+                line = f"{timestamp_str},scheduled task {task_id},finished,{pid}"
             else:
-                line = f"{timestamp_str},background job {task_id}, finished,{pid}"
+                line = f"{timestamp_str},background job {task_id},finished,{pid}"
         else:
             # Start a new task
             if random.random() < 0.6:
@@ -69,13 +69,13 @@ def main():
                 task_id = generate_scheduled_task_id()
                 pid = generate_pid()
                 active_tasks.append(("scheduled", task_id, pid))
-                line = f"{timestamp_str},scheduled task {task_id}, started,{pid}"
+                line = f"{timestamp_str},scheduled task {task_id},started,{pid}"
             else:
                 # Background job
                 task_id = generate_background_job_id()
                 pid = generate_pid()
                 active_tasks.append(("background", task_id, pid))
-                line = f"{timestamp_str},background job {task_id}, started,{pid}"
+                line = f"{timestamp_str},background job {task_id},started,{pid}"
         
         lines.append(line)
     
